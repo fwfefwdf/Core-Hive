@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CoreHive Studio — Independent Digital Studio</title>
+<meta name="description" content="CoreHive Studio — независимая цифровая студия. Разработка веб-сайтов, веб-приложений, Telegram-решений и цифровых продуктов." />
+<style>
+  :root{
+    --bg:#0b0d10;
+    --bg-2:#111418;
+    --card:#151a20;
+    --line:#232a33;
+    --text:#e8ecf1;
+    --muted:#9aa6b2;
+    --accent:#f5b301;
+    --accent-2:#ffcc33;
+    --radius:14px;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,13,16,.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.5px}
+  .brand-mark{
+    width:36px;height:36px;border-radius:10px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:grid;place-items:center;color:#0b0d10;font-weight:900;font-size:18px;
+  }
+  .brand span{font-size:18px}
+  .nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+  .nav-links a:hover{color:var(--text)}
+  .lang-switch{display:flex;gap:6px}
+  .lang-switch button{
+    background:transparent;border:1px solid var(--line);color:var(--muted);
+    padding:6px 10px;border-radius:8px;font-size:12px;cursor:pointer;
+    transition:.2s;
+  }
+  .lang-switch button:hover{color:var(--text);border-color:var(--accent)}
+  .lang-switch button.active{background:var(--accent);color:#0b0d10;border-color:var(--accent);font-weight:700}
+
+  /* Hero */
+  .hero{padding:90px 0 70px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(32px,4.5vw,52px);line-height:1.1;font-weight:800;letter-spacing:-1px}
+  .hero h1 em{color:var(--accent);font-style:normal}
+  .hero p{margin-top:22px;color:var(--muted);font-size:17px;max-width:560px}
+  .hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 22px;border-radius:10px;font-weight:600;font-size:15px;
+    transition:.2s;border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:var(--accent);color:#0b0d10}
+  .btn-primary:hover{background:var(--accent-2);transform:translateY(-1px)}
+  .btn-ghost{border-color:var(--line);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  .hero-photo{
+    aspect-ratio:1/1;border-radius:20px;overflow:hidden;
+    border:1px solid var(--line);
+    background:linear-gradient(135deg,#1a2028,#0f1318);
+    display:grid;place-items:center;position:relative;
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-photo .placeholder{
+    color:var(--muted);font-size:13px;text-align:center;padding:20px;
+  }
+
+  /* Sections */
+  section{padding:80px 0;border-bottom:1px solid var(--line)}
+  .section-head{max-width:720px;margin-bottom:48px}
+  .eyebrow{
+    color:var(--accent);font-size:12px;font-weight:700;
+    letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;
+  }
+  h2{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-.5px;line-height:1.15}
+  .section-head p{margin-top:16px;color:var(--muted);font-size:16px}
+
+  /* Cards grid */
+  .grid{display:grid;gap:20px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .card{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);padding:28px;
+    transition:.2s;
+  }
+  .card:hover{border-color:#2f3944;transform:translateY(-2px)}
+  .card h3{font-size:18px;font-weight:700;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:14.5px}
+  .card .num{
+    display:inline-block;color:var(--accent);font-weight:800;
+    font-size:13px;letter-spacing:1px;margin-bottom:12px;
+  }
+
+  /* Process */
+  .process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .step{
+    background:var(--bg-2);border:1px solid var(--line);
+    border-radius:var(--radius);padding:22px;
+  }
+  .step .n{
+    font-size:12px;color:var(--accent);font-weight:800;letter-spacing:1px;
+  }
+  .step h4{margin:8px 0 6px;font-size:15px}
+  .step p{color:var(--muted);font-size:13.5px}
+
+  /* Accounts block */
+  .accounts{
+    background:linear-gradient(135deg,#151a20,#0f1318);
+    border:1px solid var(--line);border-radius:20px;
+    padding:48px;display:grid;grid-template-columns:1.3fr .7fr;
+    gap:40px;align-items:center;
+  }
+  .accounts h3{font-size:26px;font-weight:800;margin-bottom:14px}
+  .accounts p{color:var(--muted);font-size:15px}
+  .price-box{
+    background:var(--bg);border:1px solid var(--line);
+    border-radius:14px;padding:26px;text-align:center;
+  }
+  .price-box .label{color:var(--muted);font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+  .price-box .value{font-size:22px;font-weight:800;color:var(--accent);margin:10px 0}
+  .price-box .note{color:var(--muted);font-size:12.5px}
+
+  /* Careers */
+  .careers-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .career-card{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);padding:32px;
+  }
+  .career-card h3{font-size:20px;font-weight:800;margin-bottom:10px}
+  .career-card p{color:var(--muted);font-size:14.5px;margin-bottom:18px}
+  .career-card ul{list-style:none;margin-bottom:22px}
+  .career-card ul li{
+    color:var(--muted);font-size:14px;padding:6px 0 6px 20px;position:relative;
+  }
+  .career-card ul li::before{
+    content:"→";position:absolute;left:0;color:var(--accent);
+  }
+
+  /* Special services */
+  .special{
+    background:var(--bg-2);border:1px dashed #2f3944;
+    border-radius:var(--radius);padding:36px;text-align:center;
+  }
+  .special h3{font-size:20px;font-weight:800;margin-bottom:12px}
+  .special p{color:var(--muted);font-size:14.5px;max-width:620px;margin:0 auto}
+
+  /* Contact */
+  .contact-section{padding:80px 0;border-bottom:none}
+  .contact-box{
+    background:linear-gradient(135deg,#151a20,#0f1318);
+    border:1px solid var(--line);border-radius:20px;
+    padding:56px;text-align:center;
+  }
+  .contact-box h2{margin-bottom:14px}
+  .contact-box p{color:var(--muted);font-size:15.5px;max-width:560px;margin:0 auto 28px}
+  .tg-btn{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--accent);color:#0b0d10;
+    padding:16px 32px;border-radius:12px;font-weight:800;font-size:16px;
+    transition:.2s;
+  }
+  .tg-btn:hover{background:var(--accent-2);transform:translateY(-2px)}
+  .tg-btn .icon{
+    width:26px;height:26px;border-radius:50%;
+    background:#0b0d10;color:var(--accent);
+    display:grid;place-items:center;font-size:14px;font-weight:900;
+  }
+  .contact-note{margin-top:18px;color:var(--muted);font-size:12.5px}
+
+  /* Footer */
+  footer{
+    padding:40px 0;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:16px;
+  }
+  footer .brand span{font-size:16px}
+  footer .copy{color:var(--muted);font-size:13px}
+
+  /* RTL for Arabic */
+  html[dir="rtl"] .nav-links{flex-direction:row-reverse}
+  html[dir="rtl"] .hero-grid{direction:rtl}
+  html[dir="rtl"] .card .num{float:right}
+  html[dir="rtl"] .career-card ul li{padding-right:20px;padding-left:0}
+  html[dir="rtl"] .career-card ul li::before{right:0;left:auto;content:"←"}
+
+  /* Responsive */
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-photo{max-width:420px}
+    .grid-3{grid-template-columns:1fr 1fr}
+    .process{grid-template-columns:1fr 1fr}
+    .accounts{grid-template-columns:1fr;padding:32px}
+    .careers-grid{grid-template-columns:1fr}
+    .nav-links{display:none}
+  }
+  @media(max-width:600px){
+    .grid-3,.grid-2,.process{grid-template-columns:1fr}
+    .contact-box{padding:36px 24px}
+    footer{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <a href="#" class="brand">
+      <div class="brand-mark">C</div>
+      <span>CoreHive Studio</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about" data-i18n="nav_about">О студии</a>
+      <a href="#services" data-i18n="nav_services">Услуги</a>
+      <a href="#accounts" data-i18n="nav_accounts">Аккаунты</a>
+      <a href="#careers" data-i18n="nav_careers">Карьера</a>
+      <a href="#contact" data-i18n="nav_contact">Контакты</a>
+    </nav>
+    <div class="lang-switch">
+      <button data-lang="ru" class="active">RU</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中文</button>
+      <button data-lang="ar">العربية</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="border-bottom:1px solid var(--line)">
+  <div class="container hero-grid">
+    <div>
+      <h1 data-i18n="hero_title">Независимая цифровая студия <em>CoreHive</em></h1>
+      <p data-i18n="hero_sub">Разрабатываем веб-сайты, веб-приложения, Telegram-решения и цифровые продукты. Работаем с бизнесом, командами и частными клиентами по всему миру.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary" data-i18n="hero_btn1">Наши услуги</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero_btn2">Связаться</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="hive.png" alt="CoreHive Studio" onerror="this.style.display='none';this.parentElement.querySelector('.placeholder').style.display='block'">
+      <div class="placeholder" style="display:none" data-i18n="photo_placeholder">Здесь будет фото студии<br>(файл hive.png)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="about_eyebrow">О студии</div>
+      <h2 data-i18n="about_title">CoreHive Studio — практичные цифровые решения</h2>
+      <p data-i18n="about_text">CoreHive Studio — независимая цифровая студия, специализирующаяся на разработке веб-сайтов, веб-приложений, Telegram-продуктов и цифровых инструментов. Мы работаем по принципу «от идеи до запуска»: планирование, архитектура, интерфейс, разработка, тестирование, деплой и поддержка. Наш подход — сочетание инженерной точности и внимания к практической пользе продукта.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="num">01</div>
+        <h3 data-i18n="about_c1_title">Ориентация на результат</h3>
+        <p data-i18n="about_c1_text">Каждый проект начинается с бизнес-задачи. Мы создаём продукты, которые решают конкретные проблемы и приносят измеримую пользу.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3 data-i18n="about_c2_title">Полный цикл разработки</h3>
+        <p data-i18n="about_c2_text">От проектирования архитектуры до деплоя и технической поддержки. Один подрядчик — вся ответственность за результат.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3 data-i18n="about_c3_title">Прозрачность</h3>
+        <p data-i18n="about_c3_text">Понятные сроки, фиксированные этапы и открытая коммуникация на каждом шаге сотрудничества.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="services_eyebrow">Услуги</div>
+      <h2 data-i18n="services_title">Что мы делаем</h2>
+      <p data-i18n="services_text">Студия работает с широким спектром цифровых задач — от лендингов до сложных веб-приложений и Telegram-экосистем.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3 data-i18n="s1_title">Веб-сайты</h3>
+        <p data-i18n="s1_text">Корпоративные сайты, лендинги, портфолио и промо-страницы. Адаптивная вёрстка, SEO-основа, интеграции.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="s2_title">Веб-приложения</h3>
+        <p data-i18n="s2_text">SPA и многостраничные приложения: интерфейсы, клиентская логика, бэкенд, API, базы данных.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="s3_title">Telegram-решения</h3>
+        <p data-i18n="s3_text">Боты, Mini Apps, интеграции с платежами и внешними сервисами для бизнеса и сообществ.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="s4_title">Автоматизация</h3>
+        <p data-i18n="s4_text">Скрипты, внутренние панели, интеграции и системы, которые снимают рутинные задачи.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="s5_title">Цифровые продукты</h3>
+        <p data-i18n="s5_text">Собственные утилиты, инструменты и сервисы — как готовые продукты или под заказ.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="s6_title">Поддержка и развитие</h3>
+        <p data-i18n="s6_text">Техническое обслуживание, оптимизация, обновления и дальнейшее развитие существующих продуктов.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="process_eyebrow">Процесс</div>
+      <h2 data-i18n="process_title">Как строится работа</h2>
+      <p data-i18n="process_text">Стандартный цикл разработки, адаптированный под задачи проекта.</p>
+    </div>
+    <div class="process">
+      <div class="step"><div class="n">01</div><h4 data-i18n="p1">Планирование</h4><p data-i18n="p1_text">Цели, требования, объём.</p></div>
+      <div class="step"><div class="n">02</div><h4 data-i18n="p2">Архитектура</h4><p data-i18n="p2_text">Стек, структура, данные.</p></div>
+      <div class="step"><div class="n">03</div><h4 data-i18n="p3">Интерфейс</h4><p data-i18n="p3_text">Макет, адаптивность, UX.</p></div>
+      <div class="step"><div class="n">04</div><h4 data-i18n="p4">Разработка</h4><p data-i18n="p4_text">Реализация функциональности.</p></div>
+      <div class="step"><div class="n">05</div><h4 data-i18n="p5">Тестирование</h4><p data-i18n="p5_text">Проверка и исправления.</p></div>
+      <div class="step"><div class="n">06</div><h4 data-i18n="p6">Оптимизация</h4><p data-i18n="p6_text">Производительность.</p></div>
+      <div class="step"><div class="n">07</div><h4 data-i18n="p7">Запуск</h4><p data-i18n="p7_text">Деплой и настройка.</p></div>
+      <div class="step"><div class="n">08</div><h4 data-i18n="p8">Поддержка</h4><p data-i18n="p8_text">Обновления и развитие.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOUNTS -->
+<section id="accounts">
+  <div class="container">
+    <div class="accounts">
+      <div>
+        <div class="eyebrow" data-i18n="acc_eyebrow">Telegram-аккаунты</div>
+        <h3 data-i18n="acc_title">Продажа Telegram-аккаунтов</h3>
+        <p data-i18n="acc_text">Одно из коммерческих направлений студии — реализация Telegram-аккаунтов и сопутствующих решений. Характеристики, страна регистрации и тип номера зависят от текущего наличия. Актуальные цены, наличие и спецификации предоставляются по запросу у администратора студии.</p>
+      </div>
+      <div class="price-box">
+        <div class="label" data-i18n="acc_price_label">Цены</div>
+        <div class="value" data-i18n="acc_price_value">По запросу</div>
+        <div class="note" data-i18n="acc_price_note">Свяжитесь с администратором для получения актуального прайса и наличия.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIAL SERVICES -->
+<section id="special">
+  <div class="container">
+    <div class="special">
+      <h3 data-i18n="special_title">Особые услуги</h3>
+      <p data-i18n="special_text">Студия также выполняет особые услуги по индивидуальным запросам. Детали обсуждаются напрямую с администратором.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS -->
+<section id="careers">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="careers_eyebrow">Карьера и сотрудничество</div>
+      <h2 data-i18n="careers_title">Присоединяйтесь к CoreHive</h2>
+      <p data-i18n="careers_text">Мы открыты для сотрудников и клиентов. Если вы хотите зарабатывать вместе с нами или заказать разработку — напишите нам.</p>
+    </div>
+    <div class="careers-grid">
+      <div class="career-card">
+        <h3 data-i18n="career_emp_title">Ищем сотрудников</h3>
+        <p data-i18n="career_emp_text">Разработчики, дизайнеры, менеджеры и специалисты по Telegram-решениям. Гибкий формат, проектная работа, достойное вознаграждение.</p>
+        <ul>
+          <li data-i18n="career_emp_li1">Front-end / Back-end разработка</li>
+          <li data-i18n="career_emp_li2">Telegram-боты и Mini Apps</li>
+          <li data-i18n="career_emp_li3">UI/UX дизайн</li>
+          <li data-i18n="career_emp_li4">Управление проектами</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" data-i18n="career_emp_btn">Откликнуться</a>
+      </div>
+      <div class="career-card">
+        <h3 data-i18n="career_cli_title">Ищем клиентов</h3>
+        <p data-i18n="career_cli_text">Нужен сайт, веб-приложение или Telegram-решение? Мы берём проекты любого масштаба — от лендинга до полноценной платформы.</p>
+        <ul>
+          <li data-i18n="career_cli_li1">Сайты и лендинги</li>
+          <li data-i18n="career_cli_li2">Веб-приложения</li>
+          <li data-i18n="career_cli_li3">Telegram-продукты</li>
+          <li data-i18n="career_cli_li4">Автоматизация и интеграции</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-i18n="career_cli_btn">Заказать проект</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-box">
+      <h2 data-i18n="contact_title">Свяжитесь с CoreHive Studio</h2>
+      <p data-i18n="contact_text">Для заказа проектов, сотрудничества и вопросов по продуктам — напишите нам в Telegram. Мы ответим в кратчайшие сроки.</p>
+      <a href="https://t.me/+380970724840?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5" target="_blank" rel="noopener" class="tg-btn">
+        <span class="icon">✈</span>
+        <span data-i18n="contact_btn">Наш Telegram</span>
+      </a>
+      <div class="contact-note" data-i18n="contact_note">Нажмите, чтобы открыть чат. Номер не отображается в целях безопасности.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;width:100%">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <span>CoreHive Studio</span>
+    </div>
+    <div class="copy">© <span id="year"></span> CoreHive Studio. <span data-i18n="footer_rights">Все права защищены.</span></div>
+  </div>
+</footer>
+
+<script>
+/* ============ I18N ============ */
+const i18n = {
+  ru: {
+    nav_about:"О студии", nav_services:"Услуги", nav_accounts:"Аккаунты", nav_careers:"Карьера", nav_contact:"Контакты",
+    hero_title:"Независимая цифровая студия <em>CoreHive</em>",
+    hero_sub:"Разрабатываем веб-сайты, веб-приложения, Telegram-решения и цифровые продукты. Работаем с бизнесом, командами и частными клиентами по всему миру.",
+    hero_btn1:"Наши услуги", hero_btn2:"Связаться",
+    photo_placeholder:"Здесь будет фото студии<br>(файл hive.png)",
+    about_eyebrow:"О студии", about_title:"CoreHive Studio — практичные цифровые решения",
+    about_text:"CoreHive Studio — независимая цифровая студия, специализирующаяся на разработке веб-сайтов, веб-приложений, Telegram-продуктов и цифровых инструментов. Мы работаем по принципу «от идеи до запуска»: планирование, архитектура, интерфейс, разработка, тестирование, деплой и поддержка. Наш подход — сочетание инженерной точности и внимания к практической пользе продукта.",
+    about_c1_title:"Ориентация на результат", about_c1_text:"Каждый проект начинается с бизнес-задачи. Мы создаём продукты, которые решают конкретные проблемы и приносят измеримую пользу.",
+    about_c2_title:"Полный цикл разработки", about_c2_text:"От проектирования архитектуры до деплоя и технической поддержки. Один подрядчик — вся ответственность за результат.",
+    about_c3_title:"Прозрачность", about_c3_text:"Понятные сроки, фиксированные этапы и открытая коммуникация на каждом шаге сотрудничества.",
+    services_eyebrow:"Услуги", services_title:"Что мы делаем",
+    services_text:"Студия работает с широким спектром цифровых задач — от лендингов до сложных веб-приложений и Telegram-экосистем.",
+    s1_title:"Веб-сайты", s1_text:"Корпоративные сайты, лендинги, портфолио и промо-страницы. Адаптивная вёрстка, SEO-основа, интеграции.",
+    s2_title:"Веб-приложения", s2_text:"SPA и многостраничные приложения: интерфейсы, клиентская логика, бэкенд, API, базы данных.",
+    s3_title:"Telegram-решения", s3_text:"Боты, Mini Apps, интеграции с платежами и внешними сервисами для бизнеса и сообществ.",
+    s4_title:"Автоматизация", s4_text:"Скрипты, внутренние панели, интеграции и системы, которые снимают рутинные задачи.",
+    s5_title:"Цифровые продукты", s5_text:"Собственные утилиты, инструменты и сервисы — как готовые продукты или под заказ.",
+    s6_title:"Поддержка и развитие", s6_text:"Техническое обслуживание, оптимизация, обновления и дальнейшее развитие существующих продуктов.",
+    process_eyebrow:"Процесс", process_title:"Как строится работа",
+    process_text:"Стандартный цикл разработки, адаптированный под задачи проекта.",
+    p1:"Планирование", p1_text:"Цели, требования, объём.",
+    p2:"Архитектура", p2_text:"Стек, структура, данные.",
+    p3:"Интерфейс", p3_text:"Макет, адаптивность, UX.",
+    p4:"Разработка", p4_text:"Реализация функциональности.",
+    p5:"Тестирование", p5_text:"Проверка и исправления.",
+    p6:"Оптимизация", p6_text:"Производительность.",
+    p7:"Запуск", p7_text:"Деплой и настройка.",
+    p8:"Поддержка", p8_text:"Обновления и развитие.",
+    acc_eyebrow:"Telegram-аккаунты", acc_title:"Продажа Telegram-аккаунтов",
+    acc_text:"Одно из коммерческих направлений студии — реализация Telegram-аккаунтов и сопутствующих решений. Характеристики, страна регистрации и тип номера зависят от текущего наличия. Актуальные цены, наличие и спецификации предоставляются по запросу у администратора студии.",
+    acc_price_label:"Цены", acc_price_value:"По запросу",
+    acc_price_note:"Свяжитесь с администратором для получения актуального прайса и наличия.",
+    special_title:"Особые услуги",
+    special_text:"Студия также выполняет особые услуги по индивидуальным запросам. Детали обсуждаются напрямую с администратором.",
+    careers_eyebrow:"Карьера и сотрудничество", careers_title:"Присоединяйтесь к CoreHive",
+    careers_text:"Мы открыты для сотрудников и клиентов. Если вы хотите зарабатывать вместе с нами или заказать разработку — напишите нам.",
+    career_emp_title:"Ищем сотрудников",
+    career_emp_text:"Разработчики, дизайнеры, менеджеры и специалисты по Telegram-решениям. Гибкий формат, проектная работа, достойное вознаграждение.",
+    career_emp_li1:"Front-end / Back-end разработка", career_emp_li2:"
