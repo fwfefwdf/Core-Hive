@@ -277,7 +277,6 @@
     <div class="contact-box">
       <h2 data-i18n="contact_title">Свяжитесь с CoreHive Studio</h2>
       <p data-i18n="contact_text">Для заказа проектов и сотрудничества — напишите нам в Telegram.</p>
-      <!-- Кнопка без номера в href: номер подставляется через JS при клике -->
       <button type="button" class="tg-btn" id="tgBtn">
         <span class="icon">✈</span>
         <span data-i18n="contact_btn">Наш Telegram</span>
@@ -308,8 +307,7 @@ const i18n = {
     about_c1_title:"Ориентация на результат", about_c1_text:"Каждый проект начинается с бизнес-задачи.",
     about_c2_title:"Полный цикл разработки", about_c2_text:"От архитектуры до деплоя и поддержки.",
     about_c3_title:"Прозрачность", about_c3_text:"Понятные сроки и открытая коммуникация.",
-    services_eyebrow:"Услуги", services_title:"Что мы делаем",
-    services_text:"Студия работает с широким спектром цифровых задач.",
+    services_eyebrow:"Услуги", services_title:"Что мы делаем", services_text:"Студия работает с широким спектром цифровых задач.",
     s1_title:"Веб-сайты", s1_text:"Корпоративные сайты, лендинги, портфолио.",
     s2_title:"Веб-приложения", s2_text:"SPA и многостраничные приложения.",
     s3_title:"Telegram-решения", s3_text:"Боты, Mini Apps, интеграции.",
@@ -327,22 +325,15 @@ const i18n = {
     p8:"Поддержка", p8_text:"Обновления и развитие.",
     acc_eyebrow:"Telegram-аккаунты", acc_title:"Продажа Telegram-аккаунтов",
     acc_text:"Характеристики, страна регистрации и тип номера зависят от текущего наличия. Актуальные цены предоставляются по запросу у администратора.",
-    acc_price_label:"Цены", acc_price_value:"По запросу",
-    acc_price_note:"Свяжитесь с администратором для получения прайса.",
-    special_title:"Особые услуги",
-    special_text:"Студия также выполняет особые услуги по индивидуальным запросам. Детали обсуждаются напрямую с администратором.",
-    careers_eyebrow:"Карьера и сотрудничество", careers_title:"Присоединяйтесь к CoreHive",
-    careers_text:"Мы открыты для сотрудников и клиентов.",
+    acc_price_label:"Цены", acc_price_value:"По запросу", acc_price_note:"Свяжитесь с администратором для получения прайса.",
+    special_title:"Особые услуги", special_text:"Студия также выполняет особые услуги по индивидуальным запросам. Детали обсуждаются напрямую с администратором.",
+    careers_eyebrow:"Карьера и сотрудничество", careers_title:"Присоединяйтесь к CoreHive", careers_text:"Мы открыты для сотрудников и клиентов.",
     career_emp_title:"Ищем сотрудников", career_emp_text:"Разработчики, дизайнеры, менеджеры.",
-    career_emp_li1:"Front-end / Back-end разработка", career_emp_li2:"Telegram-боты и Mini Apps", career_emp_li3:"UI/UX дизайн", career_emp_li4:"Управление проектами",
-    career_emp_btn:"Откликнуться",
+    career_emp_li1:"Front-end / Back-end разработка", career_emp_li2:"Telegram-боты и Mini Apps", career_emp_li3:"UI/UX дизайн", career_emp_li4:"Управление проектами", career_emp_btn:"Откликнуться",
     career_cli_title:"Ищем клиентов", career_cli_text:"Нужен сайт или веб-приложение?",
-    career_cli_li1:"Сайты и лендинги", career_cli_li2:"Веб-приложения", career_cli_li3:"Telegram-продукты", career_cli_li4:"Автоматизация и интеграции",
-    career_cli_btn:"Заказать проект",
-    contact_title:"Свяжитесь с CoreHive Studio",
-    contact_text:"Для заказа проектов и сотрудничества — напишите нам в Telegram.",
-    contact_btn:"Наш Telegram",
-    contact_note:"Нажмите, чтобы открыть чат. Номер не отображается в целях безопасности.",
+    career_cli_li1:"Сайты и лендинги", career_cli_li2:"Веб-приложения", career_cli_li3:"Telegram-продукты", career_cli_li4:"Автоматизация и интеграции", career_cli_btn:"Заказать проект",
+    contact_title:"Свяжитесь с CoreHive Studio", contact_text:"Для заказа проектов и сотрудничества — напишите нам в Telegram.",
+    contact_btn:"Наш Telegram", contact_note:"Нажмите, чтобы открыть чат. Номер не отображается в целях безопасности.",
     footer_rights:"Все права защищены."
   },
   en: {
@@ -356,8 +347,7 @@ const i18n = {
     about_c1_title:"Result-oriented", about_c1_text:"Every project starts with a business goal.",
     about_c2_title:"Full development cycle", about_c2_text:"From architecture to deployment and support.",
     about_c3_title:"Transparency", about_c3_text:"Clear timelines and open communication.",
-    services_eyebrow:"Services", services_title:"What we do",
-    services_text:"The studio handles a wide range of digital tasks.",
+    services_eyebrow:"Services", services_title:"What we do", services_text:"The studio handles a wide range of digital tasks.",
     s1_title:"Websites", s1_text:"Corporate sites, landing pages, portfolios.",
     s2_title:"Web applications", s2_text:"SPAs and multi-page applications.",
     s3_title:"Telegram solutions", s3_text:"Bots, Mini Apps, integrations.",
@@ -375,21 +365,133 @@ const i18n = {
     p8:"Support", p8_text:"Updates and growth.",
     acc_eyebrow:"Telegram accounts", acc_title:"Telegram account sales",
     acc_text:"Characteristics, registration country and number type depend on current stock. Current prices are provided on request from the administrator.",
-    acc_price_label:"Prices", acc_price_value:"On request",
-    acc_price_note:"Contact the administrator for the current price list.",
-    special_title:"Special services",
-    special_text:"The studio also provides special services on individual requests. Details are discussed directly with the administrator.",
-    careers_eyebrow:"Careers & partnership", careers_title:"Join CoreHive",
-    careers_text:"We are open to employees and clients.",
+    acc_price_label:"Prices", acc_price_value:"On request", acc_price_note:"Contact the administrator for the current price list.",
+    special_title:"Special services", special_text:"The studio also provides special services on individual requests. Details are discussed directly with the administrator.",
+    careers_eyebrow:"Careers & partnership", careers_title:"Join CoreHive", careers_text:"We are open to employees and clients.",
     career_emp_title:"We are hiring", career_emp_text:"Developers, designers, managers.",
-    career_emp_li1:"Front-end / Back-end development", career_emp_li2:"Telegram bots and Mini Apps", career_emp_li3:"UI/UX design", career_emp_li4:"Project management",
-    career_emp_btn:"Apply",
+    career_emp_li1:"Front-end / Back-end development", career_emp_li2:"Telegram bots and Mini Apps", career_emp_li3:"UI/UX design", career_emp_li4:"Project management", career_emp_btn:"Apply",
     career_cli_title:"Looking for clients", career_cli_text:"Need a website or web app?",
-    career_cli_li1:"Websites and landing pages", career_cli_li2:"Web applications", career_cli_li3:"Telegram products", career_cli_li4:"Automation and integrations",
-    career_cli_btn:"Order a project",
-    contact_title:"Contact CoreHive Studio",
-    contact_text:"To order projects or collaborate — message us on Telegram.",
-    contact_btn:"Our Telegram",
-    contact_note:"Click to open the chat. The number is hidden for security.",
+    career_cli_li1:"Websites and landing pages", career_cli_li2:"Web applications", career_cli_li3:"Telegram products", career_cli_li4:"Automation and integrations", career_cli_btn:"Order a project",
+    contact_title:"Contact CoreHive Studio", contact_text:"To order projects or collaborate — message us on Telegram.",
+    contact_btn:"Our Telegram", contact_note:"Click to open the chat. The number is hidden for security.",
     footer_rights:"All rights reserved."
- 
+  },
+  zh: {
+    nav_about:"关于我们", nav_services:"服务", nav_accounts:"账户", nav_careers:"招聘", nav_contact:"联系",
+    hero_title:"独立数字工作室 <em>CoreHive</em>",
+    hero_sub:"我们开发网站、Web 应用、Telegram 解决方案和数字产品。",
+    hero_btn1:"我们的服务", hero_btn2:"联系我们",
+    photo_placeholder:"工作室照片<br>(hive.png)",
+    about_eyebrow:"关于我们", about_title:"CoreHive Studio — 实用的数字解决方案",
+    about_text:"CoreHive Studio 是一家独立数字工作室，专注于网站、Web 应用、Telegram 产品和数字工具的开发。",
+    about_c1_title:"结果导向", about_c1_text:"每个项目都从业务目标出发。",
+    about_c2_title:"完整开发周期", about_c2_text:"从架构到部署与支持。",
+    about_c3_title:"透明", about_c3_text:"清晰的周期与开放的沟通。",
+    services_eyebrow:"服务", services_title:"我们做什么", services_text:"工作室处理各种数字任务。",
+    s1_title:"网站", s1_text:"企业网站、落地页、作品集。",
+    s2_title:"Web 应用", s2_text:"单页和多页应用。",
+    s3_title:"Telegram 解决方案", s3_text:"机器人、Mini Apps、集成。",
+    s4_title:"自动化", s4_text:"脚本、内部面板、集成。",
+    s5_title:"数字产品", s5_text:"自有工具和服务。",
+    s6_title:"支持与成长", s6_text:"维护、优化、更新。",
+    process_eyebrow:"流程", process_title:"我们如何工作", process_text:"标准开发周期。",
+    p1:"规划", p1_text:"目标、需求、范围。",
+    p2:"架构", p2_text:"技术栈、结构、数据。",
+    p3:"界面", p3_text:"布局、响应式、用户体验。",
+    p4:"开发", p4_text:"功能实现。",
+    p5:"测试", p5_text:"检查与修复。",
+    p6:"优化", p6_text:"性能。",
+    p7:"上线", p7_text:"部署与配置。",
+    p8:"支持", p8_text:"更新与成长。",
+    acc_eyebrow:"Telegram 账户", acc_title:"Telegram 账户销售",
+    acc_text:"特征、注册国家和号码类型取决于当前库存。当前价格由管理员按需提供。",
+    acc_price_label:"价格", acc_price_value:"按需", acc_price_note:"请联系管理员获取当前价目表。",
+    special_title:"特殊服务", special_text:"工作室还根据个人请求提供特殊服务。详情请直接与管理员讨论。",
+    careers_eyebrow:"招聘与合作", careers_title:"加入 CoreHive", careers_text:"我们欢迎员工和客户。",
+    career_emp_title:"我们正在招聘", career_emp_text:"开发人员、设计师、经理。",
+    career_emp_li1:"前端 / 后端开发", career_emp_li2:"Telegram 机器人和 Mini Apps", career_emp_li3:"UI/UX 设计", career_emp_li4:"项目管理", career_emp_btn:"申请",
+    career_cli_title:"寻找客户", career_cli_text:"需要网站或 Web 应用？",
+    career_cli_li1:"网站和落地页", career_cli_li2:"Web 应用", career_cli_li3:"Telegram 产品", career_cli_li4:"自动化与集成", career_cli_btn:"订购项目",
+    contact_title:"联系 CoreHive Studio", contact_text:"订购项目或合作 — 请在 Telegram 上给我们留言。",
+    contact_btn:"我们的 Telegram", contact_note:"点击打开聊天。出于安全考虑，号码不显示。",
+    footer_rights:"版权所有。"
+  },
+  ar: {
+    nav_about:"من نحن", nav_services:"الخدمات", nav_accounts:"الحسابات", nav_careers:"الوظائف", nav_contact:"اتصل بنا",
+    hero_title:"استوديو رقمي مستقل <em>CoreHive</em>",
+    hero_sub:"نطوّر المواقع وتطبيقات الويب وحلول Telegram والمنتجات الرقمية.",
+    hero_btn1:"خدماتنا", hero_btn2:"اتصل بنا",
+    photo_placeholder:"صورة الاستوديو<br>(hive.png)",
+    about_eyebrow:"من نحن", about_title:"CoreHive Studio — حلول رقمية عملية",
+    about_text:"CoreHive Studio استوديو رقمي مستقل متخصص في تطوير المواقع وتطبيقات الويب ومنتجات Telegram والأدوات الرقمية.",
+    about_c1_title:"التركيز على النتائج", about_c1_text:"كل مشروع يبدأ بهدف تجاري.",
+    about_c2_title:"دورة تطوير كاملة", about_c2_text:"من الهندسة إلى النشر والدعم.",
+    about_c3_title:"الشفافية", about_c3_text:"مواعيد واضحة وتواصل مفتوح.",
+    services_eyebrow:"الخدمات", services_title:"ماذا نفعل", services_text:"يتعامل الاستوديو مع مجموعة واسعة من المهام الرقمية.",
+    s1_title:"المواقع", s1_text:"مواقع الشركات وصفحات الهبوط.",
+    s2_title:"تطبيقات الويب", s2_text:"تطبيقات صفحة واحدة ومتعددة الصفحات.",
+    s3_title:"حلول Telegram", s3_text:"البوتات وMini Apps والتكاملات.",
+    s4_title:"الأتمتة", s4_text:"السكريبتات واللوحات الداخلية والتكاملات.",
+    s5_title:"المنتجات الرقمية", s5_text:"أدوات وخدمات خاصة بنا.",
+    s6_title:"الدعم والنمو", s6_text:"الصيانة والتحسين والتحديثات.",
+    process_eyebrow:"العملية", process_title:"كيف نعمل", process_text:"دورة تطوير قياسية.",
+    p1:"التخطيط", p1_text:"الأهداف والمتطلبات والنطاق.",
+    p2:"الهندسة", p2_text:"التقنيات والهيكل والبيانات.",
+    p3:"الواجهة", p3_text:"التصميم والاستجابة وتجربة المستخدم.",
+    p4:"التطوير", p4_text:"تنفيذ الميزات.",
+    p5:"الاختبار", p5_text:"الفحص والإصلاح.",
+    p6:"التحسين", p6_text:"الأداء.",
+    p7:"الإطلاق", p7_text:"النشر والإعداد.",
+    p8:"الدعم", p8_text:"التحديثات والنمو.",
+    acc_eyebrow:"حسابات Telegram", acc_title:"بيع حسابات Telegram",
+    acc_text:"تعتمد الخصائص وبلد التسجيل ونوع الرقم على المخزون الحالي. تُقدَّم الأسعار الحالية عند الطلب من المسؤول.",
+    acc_price_label:"الأسعار", acc_price_value:"عند الطلب", acc_price_note:"اتصل بالمسؤول للحصول على قائمة الأسعار.",
+    special_title:"خدمات خاصة", special_text:"يقدّم الاستوديو أيضًا خدمات خاصة بناءً على طلبات فردية. تُناقش التفاصيل مباشرة مع المسؤول.",
+    careers_eyebrow:"الوظائف والشراكة", careers_title:"انضم إلى CoreHive", careers_text:"نرحب بالموظفين والعملاء.",
+    career_emp_title:"نوظّف", career_emp_text:"مطورون ومصممون ومديرون.",
+    career_emp_li1:"تطوير الواجهة الأمامية / الخلفية", career_emp_li2:"بوتات Telegram وMini Apps", career_emp_li3:"تصميم UI/UX", career_emp_li4:"إدارة المشاريع", career_emp_btn:"تقدّم",
+    career_cli_title:"نبحث عن عملاء", career_cli_text:"تحتاج موقعًا أو تطبيق ويب؟",
+    career_cli_li1:"المواقع وصفحات الهبوط", career_cli_li2:"تطبيقات الويب", career_cli_li3:"منتجات Telegram", career_cli_li4:"الأتمتة والتكاملات", career_cli_btn:"اطلب مشروعًا",
+    contact_title:"اتصل بـ CoreHive Studio", contact_text:"لطلب المشاريع أو التعاون — راسلنا على Telegram.",
+    contact_btn:"Telegram الخاص بنا", contact_note:"اضغط لفتح الدردشة. الرقم مخفي لأسباب أمنية.",
+    footer_rights:"جميع الحقوق محفوظة."
+  }
+};
+
+/* ================= ЯЗЫКИ ================= */
+function setLang(lang){
+  const dict = i18n[lang] || i18n.ru;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+  document.querySelectorAll(".lang-switch button").forEach(b => {
+    b.classList.toggle("active", b.dataset.lang === lang);
+  });
+  try { localStorage.setItem("corehive_lang", lang); } catch(e){}
+}
+
+document.querySelectorAll(".lang-switch button").forEach(btn => {
+  btn.addEventListener("click", () => setLang(btn.dataset.lang));
+});
+
+/* ================= TELEGRAM (номер скрыт) ================= */
+// Номер не хранится в HTML. Он собирается только в момент клика.
+document.getElementById("tgBtn").addEventListener("click", () => {
+  const phone = "+" + "380" + "97" + "072" + "48" + "40"; // склейка, чтобы не было в исходнике одной строкой
+  const text = encodeURIComponent("Здравствуйте");
+  window.open("https://t.me/" + phone + "?text=" + text, "_blank", "noopener");
+});
+
+/* ================= ГОД ================= */
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ================= СТАРТ ================= */
+let saved = "ru";
+try { saved = localStorage.getItem("corehive_lang") || "ru"; } catch(e){}
+setLang(saved);
+</script>
+</body>
+</html>
