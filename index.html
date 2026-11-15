@@ -603,13 +603,14 @@
     });
   }
 
-  /* Telegram — номер собирается только в момент клика */
+    /* Telegram — прямая ссылка на юзернейм с готовым текстом */
   var tg = document.getElementById("tgBtn");
   if(tg){
     tg.addEventListener("click", function(){
-      var phone = "+" + "380" + "97" + "072" + "48" + "40";
+      // Ссылка на ваш юзернейм и закодированный текст "Здравствуйте"
+      var username = "Core_Hive_Studio";
       var text = encodeURIComponent("Здравствуйте");
-      window.open("https://t.me/" + phone + "?text=" + text, "_blank", "noopener");
+      window.open("https://t.me/" + username + "?text=" + text, "_blank", "noopener");
     });
   }
 
